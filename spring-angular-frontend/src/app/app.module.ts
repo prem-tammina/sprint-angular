@@ -4,16 +4,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './components/pages/welcome/welcome.component';
-import { LoginComponent } from './components/pages/login/login.component';
-import { ErrorComponent } from './components/pages/error/error.component';
+import { WelcomeComponent } from './com/pages/welcome/welcome.component';
+import { LoginComponent } from './com/pages/login/login.component';
+import { ErrorComponent } from './com/pages/error/error.component';
+import { ListTodosComponent } from './com/todos/list-todos/list-todos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    ListTodosComponent
   ],
   imports: [
     BrowserModule,
