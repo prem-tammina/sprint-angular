@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './com/pages/login/login.component';
-import { WelcomeComponent } from './com/pages/welcome/welcome.component';
-import { ErrorComponent } from './com/pages/error/error.component';
-import { ListTodosComponent } from './com/todos/list-todos/list-todos.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { WelcomeComponent } from './components/pages/welcome/welcome.component';
+import { ErrorComponent } from './components/pages/error/error.component';
+import { ListTodosComponent } from './components/todos/list-todos/list-todos.component';
 
 
 const routes: Routes = [

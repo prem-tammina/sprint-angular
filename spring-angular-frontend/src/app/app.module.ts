@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './com/pages/welcome/welcome.component';
-import { LoginComponent } from './com/pages/login/login.component';
-import { ErrorComponent } from './com/pages/error/error.component';
-import { ListTodosComponent } from './com/todos/list-todos/list-todos.component';
-import { HeaderComponent } from './com/pages/header/header.component';
-import { FooterComponent } from './com/pages/footer/footer.component';
+import { WelcomeComponent } from './components/pages/welcome/welcome.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { ErrorComponent } from './components/pages/error/error.component';
+import { ListTodosComponent } from './components/todos/list-todos/list-todos.component';
+import { HeaderComponent } from './components/pages/header/header.component';
+import { FooterComponent } from './components/pages/footer/footer.component';
+import { MenuComponent } from './components/pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './com/pages/footer/footer.component';
     ErrorComponent,
     ListTodosComponent,
     HeaderComponent,
-    FooterComponent    
+    FooterComponent,
+    MenuComponent    
   ],
   imports: [
     BrowserModule,
