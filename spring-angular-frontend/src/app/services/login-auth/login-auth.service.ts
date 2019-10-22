@@ -8,10 +8,20 @@ export class LoginAuthService {
   constructor() { }
 
   authenticate(username: string, password: string): boolean {
-    if (username === "premtammina22@gmail.com" && password === "prem123") {
+    if (username === 'premtammina22@gmail.com' && password === 'prem123') {
+      sessionStorage.setItem('auth-user', username);
       return true;
     } else {
       return false;
+    }
+  }
+
+  isUserLoggedIn(): boolean {
+    let loggedInUser = sessionStorage.getItem('auth-user');
+    if (loggedInUser === null) {
+      return false;
+    } else {
+      return true;
     }
   }
 }
