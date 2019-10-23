@@ -4,6 +4,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { WelcomeComponent } from './components/pages/welcome/welcome.component';
 import { ErrorComponent } from './components/pages/error/error.component';
 import { ListTodosComponent } from './components/todos/list-todos/list-todos.component';
+import { LogoutComponent } from './components/pages/logout/logout.component';
 
 
 const routes: Routes = [
@@ -12,10 +13,12 @@ const routes: Routes = [
   }, {
     path: 'login', component: LoginComponent
   }, {
+    path: 'logout', component: LogoutComponent
+  }, {
     path: 'welcome/:name', component: WelcomeComponent
   }, {
     path: 'todos', component: ListTodosComponent
-  },{
+  }, {
     path: '**', component: ErrorComponent
   }
 ];

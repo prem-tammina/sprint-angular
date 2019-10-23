@@ -24,4 +24,8 @@ export class LoginAuthService {
       return true;
     }
   }
+
+  logout(): void {
+    sessionStorage.removeItem('auth-user');
+  }
 }

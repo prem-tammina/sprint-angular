@@ -12,6 +12,7 @@ import { ListTodosComponent } from './components/todos/list-todos/list-todos.com
 import { HeaderComponent } from './components/pages/header/header.component';
 import { FooterComponent } from './components/pages/footer/footer.component';
 import { MenuComponent } from './components/pages/menu/menu.component';
+import { LogoutComponent } from './components/pages/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MenuComponent } from './components/pages/menu/menu.component';
     ListTodosComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent    
+    MenuComponent,
+    LogoutComponent    
   ],
   imports: [
     BrowserModule,
