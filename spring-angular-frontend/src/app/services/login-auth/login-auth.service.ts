@@ -16,7 +16,8 @@ export class LoginAuthService {
     }
   }
 
-  isUserLoggedIn(): boolean {
+  isUserLoggedIn(option?: string): boolean {
+    console.log(option);
     let loggedInUser = sessionStorage.getItem('auth-user');
     if (loggedInUser === null) {
       return false;
