@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/pages/header/header.component';
 import { FooterComponent } from './components/pages/footer/footer.component';
 import { MenuComponent } from './components/pages/menu/menu.component';
 import { LogoutComponent } from './components/pages/logout/logout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LogoutComponent } from './components/pages/logout/logout.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
