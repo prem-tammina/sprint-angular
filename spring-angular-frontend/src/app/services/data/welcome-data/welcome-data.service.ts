@@ -12,7 +12,8 @@ export class WelcomeDataService {
     this.http = http;
   }
 
-  executeHellowWorldBeanService() {
-    console.log("Execute Hello World Bean Service");
+  executeHellowWorldBeanService(): void {
+    console.log('Execute Hello World Bean Service');
+    this.http.get('http://localhost:8080/hello-world-bean').subscribe();
   }
 }
