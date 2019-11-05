@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HelloBean } from 'src/app/models/hello-bean';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +14,8 @@ export class WelcomeDataService {
     this.http = http;
   }
 
-  executeHellowWorldBeanService(): void {
-    console.log('Execute Hello World Bean Service');
-    this.http.get('http://localhost:8080/hello-world-bean').subscribe();
+  executeHellowWorldBeanService(): Observable<HelloBean> {
+    return this.http.get<HelloBean>('http://localhost:8080/hello-world-bean');
   }
+
 }

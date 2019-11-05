@@ -22,7 +22,8 @@ public class HelloWorldController {
 	}
 
 	@GetMapping(path = "/hello-world-bean")
-	public HelloWorldBean getHelloWorldBean() {
+	public HelloWorldBean getHelloWorldBean() throws Exception {
+		// throw new Exception(" Not found ");
 		return new HelloWorldBean("Default");
 	}
 
