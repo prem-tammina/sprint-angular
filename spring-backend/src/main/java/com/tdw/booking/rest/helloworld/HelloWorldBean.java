@@ -1,4 +1,4 @@
-package com.tdw.booking;
+package com.tdw.booking.rest.helloworld;
 
 public class HelloWorldBean {
 

@@ -1,4 +1,4 @@
-package com.tdw.booking;
+package com.tdw.booking.rest.helloworld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

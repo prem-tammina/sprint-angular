@@ -14,8 +14,12 @@ export class WelcomeDataService {
     this.http = http;
   }
 
-  executeHellowWorldBeanService(): Observable<HelloBean> {
+  executeHelloWorldBeanService(): Observable<HelloBean> {
     return this.http.get<HelloBean>('http://localhost:8080/hello-world-bean');
+  }
+
+  executeHelloWorldBeanServiceWithName(name: string): Observable<HelloBean> {
+    return this.http.get<HelloBean>(`http://localhost:8080/hello-world-bean/${name}`);
   }
 
 }

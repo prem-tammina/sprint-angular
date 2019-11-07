@@ -26,7 +26,19 @@ export class WelcomeComponent implements OnInit {
   }
 
   getWelcomeMessage(): void {
-    this.welcomeDataService.executeHellowWorldBeanService().subscribe(
+    this.welcomeDataService.executeHelloWorldBeanService().subscribe(
+      (helloBean: HelloBean) => {
+        this.handleSuccessfulResponse(helloBean);
+      },
+      (error) => {
+        this.handleErroresponse(error);
+      }
+    );
+    console.log('last line of welcome message');
+  }
+
+  getWelcomeMessageWithName(): void {
+    this.welcomeDataService.executeHelloWorldBeanServiceWithName(this.username).subscribe(
       (helloBean: HelloBean) => {
         this.handleSuccessfulResponse(helloBean);
       },
