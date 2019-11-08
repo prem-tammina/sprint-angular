@@ -1,6 +1,6 @@
 package com.tdw.booking.rest.todo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Todo {
 	private long id;
@@ -8,6 +8,16 @@ public class Todo {
 	private String description;
 	private Date targetDate;
 	private boolean isCompleted;
+
+	public Todo(long id, String username, String description, Date targetDate,
+			boolean isCompleted) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.description = description;
+		this.targetDate = targetDate;
+		this.isCompleted = isCompleted;
+	}
 
 	public long getId() {
 		return id;
