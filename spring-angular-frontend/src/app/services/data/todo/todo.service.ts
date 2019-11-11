@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Todo } from '../../../components/todos/model/todo';
 import { Observable } from 'rxjs';
+import { Todo } from '../../../components/todos/model/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,11 @@ export class TodoService {
   }
 
   getAllTodoByUsername(username: string): Observable<Todo[]> {
-    return this.http.get<Todo[]>(`http://localhost:8080/todos/${username}`);
+    return this.http.get<Todo[]>(`http://localhost:8080/${username}/todos`);
+  }
+
+  deleteTodoById(username: string, id: number): Observable<any> {
+    return this.http.delete(`http://localhost:8080/${username}/todos/${id}`);
   }
 
 }

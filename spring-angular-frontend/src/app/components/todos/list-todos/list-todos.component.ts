@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../model/todo';
+import { TodoService } from 'src/app/services/data/todo/todo.service';
 
 @Component({
   selector: 'app-list-todos',
@@ -8,11 +9,30 @@ import { Todo } from '../model/todo';
 })
 export class ListTodosComponent implements OnInit {
 
-  todos: Todo[] = [new Todo(1, 'Create deal today 1'), new Todo(2, 'Create deal today 2'), new Todo(3, 'Create deal today 3')];
+  private todoService: TodoService;
+  private todos: Todo[];
+  private serviceMessage: string;
 
-  constructor() { }
+  constructor(todoService: TodoService) {
+    this.todoService = todoService;
+  }
+
+  private loadTodos(): void {
+    this.todoService.getAllTodoByUsername('premtammina').subscribe((todos: Todo[]) => {
+      this.todos = todos;
+    });
+  }
 
   ngOnInit() {
+    this.loadTodos();
+  }
+
+  deleteTodo(id: number): void {
+    this.todoService.deleteTodoById('premtammina', id).subscribe((response) => {
+      console.log(response);
+      this.serviceMessage = `Deleted Todo of ${id}`;
+      this.loadTodos();
+    });
   }
 
 }

@@ -7,16 +7,15 @@ public class Todo {
 	private String username;
 	private String description;
 	private Date targetDate;
-	private boolean isCompleted;
+	private boolean completed;
 
-	public Todo(long id, String username, String description, Date targetDate,
-			boolean isCompleted) {
+	public Todo(long id, String username, String description, Date targetDate, boolean completed) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.description = description;
 		this.targetDate = targetDate;
-		this.isCompleted = isCompleted;
+		this.completed = completed;
 	}
 
 	public long getId() {
@@ -35,12 +34,8 @@ public class Todo {
 		return targetDate;
 	}
 
-	public boolean isCompleted() {
-		return isCompleted;
-	}
-
-	public void setId(long id) {
-		this.id = id;
+	public boolean getCompleted() {
+		return completed;
 	}
 
 	public void setUsername(String username) {
@@ -55,8 +50,30 @@ public class Todo {
 		this.targetDate = targetDate;
 	}
 
-	public void setCompleted(boolean isCompleted) {
-		this.isCompleted = isCompleted;
+	public void setCompleted(boolean completed) {
+		this.completed = completed;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Todo other = (Todo) obj;
+		if (id != other.id)
+			return false;
+		return true;
 	}
 
 }
