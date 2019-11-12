@@ -22,4 +22,8 @@ export class TodoService {
     return this.http.delete(`http://localhost:8080/${username}/todos/${id}`);
   }
 
+  getTodoById(username: string, id: number): Observable<any> {
+    return this.http.get<Todo>(`http://localhost:8080/${username}/todo/${id}`);
+  }
+
 }

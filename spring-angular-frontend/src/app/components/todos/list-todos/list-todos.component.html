@@ -7,7 +7,7 @@
             <th>Description</th>
             <th>Date</th>
             <th>Completed</th>
-            <th>Action</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -16,7 +16,10 @@
             <td>{{todo.description}}</td>
             <td>{{todo.targetDate | date}}</td>
             <td>{{todo.completed}}</td>
-            <td><button (click)="deleteTodo(todo.id)" class="btn btn-danger">Delete</button> </td>
+            <td>
+                <button (click)="deleteTodo(todo.id)" class="btn btn-danger">Delete</button>
+                <button (click)="updateTodo(todo.id)" style="margin-left:5px" class="btn btn-info">Update</button>
+            </td>
         </tr>
     </tbody>
 </table>

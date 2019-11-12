@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../model/todo';
 import { TodoService } from 'src/app/services/data/todo/todo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-todos',
@@ -12,9 +13,11 @@ export class ListTodosComponent implements OnInit {
   private todoService: TodoService;
   private todos: Todo[];
   private serviceMessage: string;
+  private router: Router;
 
-  constructor(todoService: TodoService) {
+  constructor(todoService: TodoService, router: Router) {
     this.todoService = todoService;
+    this.router = router;
   }
 
   private loadTodos(): void {
@@ -33,6 +36,10 @@ export class ListTodosComponent implements OnInit {
       this.serviceMessage = `Deleted Todo of ${id}`;
       this.loadTodos();
     });
+  }
+
+  updateTodo(id: number): void {
+    this.router.navigate(['todo', id]);
   }
 
 }
