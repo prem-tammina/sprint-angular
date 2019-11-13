@@ -46,11 +46,20 @@ public class TodoHardCodeService {
 		Todo localTodo = null;
 		if (todo != null) {
 			Long todoId = todo.getId();
+			System.out.println(" Todo Id ");
+			System.out.println(todoId);
+
 			if (todoId == 0) {
+				todo.setUsername("premtammina");
 				todoId = ++idCounter;
+				todo.setId(todoId);
 			}
 
-			localTodo = todosList.put(todoId, todo);
+			System.out.println(" Todo Id next ");
+			System.out.println(todoId);
+
+			todosList.put(todoId, todo);
+			localTodo = todo;
 		}
 
 		return localTodo;

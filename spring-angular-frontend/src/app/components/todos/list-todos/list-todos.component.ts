@@ -42,4 +42,8 @@ export class ListTodosComponent implements OnInit {
     this.router.navigate(['todo', id]);
   }
 
+  saveTodo():void{
+    this.router.navigate(['todo', 0]);
+  }
+
 }

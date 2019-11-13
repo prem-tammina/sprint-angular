@@ -26,4 +26,12 @@ export class TodoService {
     return this.http.get<Todo>(`http://localhost:8080/${username}/todo/${id}`);
   }
 
+  updateTodo(username: string, todo: Todo): Observable<any> {
+    return this.http.put<Todo>(`http://localhost:8080/${username}/todo`, todo);
+  }
+
+  saveTodo(username: string, todo: Todo): Observable<any> {
+    return this.http.post<Todo>(`http://localhost:8080/${username}/todo`, todo);
+  }
+
 }
