@@ -13,8 +13,9 @@ import { HeaderComponent } from './components/pages/header/header.component';
 import { FooterComponent } from './components/pages/footer/footer.component';
 import { MenuComponent } from './components/pages/menu/menu.component';
 import { LogoutComponent } from './components/pages/logout/logout.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TodoComponent } from './components/todos/todo/todo.component';
+import { HttpIntercepterBasicAuthService } from './services/http/http-Intercepter-basic-auth/http-intercepter-basic-auth.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { TodoComponent } from './components/todos/todo/todo.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
